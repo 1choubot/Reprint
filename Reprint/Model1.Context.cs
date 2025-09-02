@@ -30,5 +30,9 @@ namespace Reprint
         public virtual DbSet<Alarm> Alarm { get; set; }
         public virtual DbSet<DefineChannal> DefineChannal { get; set; }
         public virtual DbSet<SystemStanderd> SystemStanderd { get; set; }
+        public virtual DbSet<TestData> TestData { get; set; }
+        public virtual DbSet<TestDefineVarible> TestDefineVarible { get; set; }
+        public virtual DbSet<TestInfo> TestInfo { get; set; }
+        public virtual DbSet<WorkStation> WorkStation { get; set; }
     }
 }

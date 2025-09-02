@@ -37,6 +37,39 @@
           <Property Name="Id" Type="bigint" Nullable="false" />
           <Property Name="Offset" Type="float" />
         </EntityType>
+        <EntityType Name="TestData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TestCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="TestData" Type="nvarchar(max)" />
+          <Property Name="Time" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkStationId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TestDefineVarible">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TestCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DataName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uint" Type="nchar" MaxLength="10" />
+          <Property Name="Address" Type="int" />
+          <Property Name="Ratio" Type="float" />
+          <Property Name="Offset" Type="float" />
+        </EntityType>
+        <EntityType Name="TestInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TestCode" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TestName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TestType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="id" />
@@ -52,6 +85,23 @@
           </Key>
           <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkStation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TestType" Type="nvarchar" MaxLength="100" />
+          <Property Name="TestCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkStationId" Type="int" />
+          <Property Name="SetRunSpeed" Type="int" />
+          <Property Name="SetLongTime" Type="int" />
+          <Property Name="SetActiveTime" Type="int" />
+          <Property Name="HighTemp" Type="float" />
+          <Property Name="LowTemp" Type="float" />
+          <Property Name="AcrossSpeed" Type="int" />
+          <Property Name="HeatTemp" Type="float" />
+          <Property Name="CoolTemp" Type="float" />
         </EntityType>
         <Association Name="FK__User__TypeId__37A5467C">
           <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
@@ -69,8 +119,12 @@
           <EntitySet Name="Alarm" EntityType="Self.Alarm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DefineChannal" EntityType="Self.DefineChannal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemStanderd" EntityType="Self.SystemStanderd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestData" EntityType="Self.TestData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestDefineVarible" EntityType="Self.TestDefineVarible" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestInfo" EntityType="Self.TestInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkStation" EntityType="Self.WorkStation" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__User__TypeId__37A5467C" Association="Self.FK__User__TypeId__37A5467C">
             <End Role="UserType" EntitySet="UserType" />
             <End Role="User" EntitySet="User" />
@@ -100,6 +154,10 @@
           <EntitySet Name="Alarm" EntityType="ReprintModel.Alarm" />
           <EntitySet Name="DefineChannal" EntityType="ReprintModel.DefineChannal" />
           <EntitySet Name="SystemStanderd" EntityType="ReprintModel.SystemStanderd" />
+          <EntitySet Name="TestData" EntityType="ReprintModel.TestData" />
+          <EntitySet Name="TestDefineVarible" EntityType="ReprintModel.TestDefineVarible" />
+          <EntitySet Name="TestInfo" EntityType="ReprintModel.TestInfo" />
+          <EntitySet Name="WorkStation" EntityType="ReprintModel.WorkStation" />
       
          
         </EntityContainer>
@@ -154,6 +212,56 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" />
           <Property Name="Offset" Type="Double" />
+        </EntityType>
+        <EntityType Name="TestData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TestCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TestData1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WorkStationId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TestDefineVarible">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TestCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DataName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Uint" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Address" Type="Int32" />
+          <Property Name="Ratio" Type="Double" />
+          <Property Name="Offset" Type="Double" />
+        </EntityType>
+        <EntityType Name="TestInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TestCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TestName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TestType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WorkStation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TestType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TestCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WorkStationId" Type="Int32" />
+          <Property Name="SetRunSpeed" Type="Int32" />
+          <Property Name="SetLongTime" Type="Int32" />
+          <Property Name="SetActiveTime" Type="Int32" />
+          <Property Name="HighTemp" Type="Double" />
+          <Property Name="LowTemp" Type="Double" />
+          <Property Name="AcrossSpeed" Type="Int32" />
+          <Property Name="HeatTemp" Type="Double" />
+          <Property Name="CoolTemp" Type="Double" />
         </EntityType>
       
        
@@ -212,6 +320,60 @@
             <EntityTypeMapping TypeName="ReprintModel.SystemStanderd">
               <MappingFragment StoreEntitySet="SystemStanderd">
                 <ScalarProperty Name="Offset" ColumnName="Offset" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestData">
+            <EntityTypeMapping TypeName="ReprintModel.TestData">
+              <MappingFragment StoreEntitySet="TestData">
+                <ScalarProperty Name="WorkStationId" ColumnName="WorkStationId" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="TestData1" ColumnName="TestData" />
+                <ScalarProperty Name="TestCode" ColumnName="TestCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestDefineVarible">
+            <EntityTypeMapping TypeName="ReprintModel.TestDefineVarible">
+              <MappingFragment StoreEntitySet="TestDefineVarible">
+                <ScalarProperty Name="Offset" ColumnName="Offset" />
+                <ScalarProperty Name="Ratio" ColumnName="Ratio" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Uint" ColumnName="Uint" />
+                <ScalarProperty Name="DataName" ColumnName="DataName" />
+                <ScalarProperty Name="TestCode" ColumnName="TestCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestInfo">
+            <EntityTypeMapping TypeName="ReprintModel.TestInfo">
+              <MappingFragment StoreEntitySet="TestInfo">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="TestType" ColumnName="TestType" />
+                <ScalarProperty Name="TestName" ColumnName="TestName" />
+                <ScalarProperty Name="TestCode" ColumnName="TestCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkStation">
+            <EntityTypeMapping TypeName="ReprintModel.WorkStation">
+              <MappingFragment StoreEntitySet="WorkStation">
+                <ScalarProperty Name="CoolTemp" ColumnName="CoolTemp" />
+                <ScalarProperty Name="HeatTemp" ColumnName="HeatTemp" />
+                <ScalarProperty Name="AcrossSpeed" ColumnName="AcrossSpeed" />
+                <ScalarProperty Name="LowTemp" ColumnName="LowTemp" />
+                <ScalarProperty Name="HighTemp" ColumnName="HighTemp" />
+                <ScalarProperty Name="SetActiveTime" ColumnName="SetActiveTime" />
+                <ScalarProperty Name="SetLongTime" ColumnName="SetLongTime" />
+                <ScalarProperty Name="SetRunSpeed" ColumnName="SetRunSpeed" />
+                <ScalarProperty Name="WorkStationId" ColumnName="WorkStationId" />
+                <ScalarProperty Name="TestCode" ColumnName="TestCode" />
+                <ScalarProperty Name="TestType" ColumnName="TestType" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

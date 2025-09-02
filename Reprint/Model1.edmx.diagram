@@ -11,6 +11,10 @@
         <EntityTypeShape EntityType="ReprintModel.Alarm" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="ReprintModel.DefineChannal" Width="1.5" PointX="3.375" PointY="3.75" />
         <EntityTypeShape EntityType="ReprintModel.SystemStanderd" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ReprintModel.TestData" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ReprintModel.TestDefineVarible" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ReprintModel.TestInfo" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ReprintModel.WorkStation" Width="1.5" PointX="7.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

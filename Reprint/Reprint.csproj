@@ -69,6 +69,9 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="ZedGraph, Version=5.2.0.439, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.2.0\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alarm.cs">
@@ -94,6 +97,12 @@
     </Compile>
     <Compile Include="DefineChannelControl.Designer.cs">
       <DependentUpon>DefineChannelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisplayControl.Designer.cs">
+      <DependentUpon>DisplayControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -147,6 +156,21 @@
     <Compile Include="SystemTestControl.Designer.cs">
       <DependentUpon>SystemTestControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestControl.Designer.cs">
+      <DependentUpon>TestControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestData.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestDefineVarible.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -177,6 +201,9 @@
     <Compile Include="VIew\MainUserControl.Designer.cs">
       <DependentUpon>MainUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkStation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AlarmSetControl.resx">
       <DependentUpon>AlarmSetControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DefineChannelControl.resx">
       <DependentUpon>DefineChannelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayControl.resx">
+      <DependentUpon>DisplayControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -206,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemTestControl.resx">
       <DependentUpon>SystemTestControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestControl.resx">
+      <DependentUpon>TestControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInfoControl.resx">
       <DependentUpon>UserInfoControl.cs</DependentUpon>
@@ -238,6 +271,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="License-LGPL.txt" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
