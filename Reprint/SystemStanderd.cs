@@ -12,16 +12,9 @@ namespace Reprint
     using System;
     using System.Collections.Generic;
     
-    public partial class DefineChannel
+    public partial class SystemStanderd
     {
         public long Id { get; set; }
-        public string ChannelCode { get; set; }
-        public string DataName { get; set; }
-        public string Uint { get; set; }
-        public Nullable<double> Max { get; set; }
-        public Nullable<double> Min { get; set; }
-        public Nullable<double> Ratio { get; set; }
         public Nullable<double> Offset { get; set; }
-        public Nullable<int> Address { get; set; }
     }
 }

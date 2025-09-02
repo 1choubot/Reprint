@@ -28,6 +28,7 @@ namespace Reprint
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserType> UserType { get; set; }
         public virtual DbSet<Alarm> Alarm { get; set; }
-        public virtual DbSet<DefineChannel> DefineChannel { get; set; }
+        public virtual DbSet<DefineChannal> DefineChannal { get; set; }
+        public virtual DbSet<SystemStanderd> SystemStanderd { get; set; }
     }
 }

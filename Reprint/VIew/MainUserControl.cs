@@ -8,6 +8,7 @@ namespace Reprint.VIew
     {
         private Timer timer;
         private string currentUserName; // 字段：保存当前用户名
+        public bool testIsStart = false;//系统状态
 
         public MainUserControl()
         {

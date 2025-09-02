@@ -16,11 +16,11 @@
           <Property Name="AlarmValue" Type="int" />
           <Property Name="StopValue" Type="int" />
         </EntityType>
-        <EntityType Name="DefineChannel">
+        <EntityType Name="DefineChannal">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ChannelCode" Type="nvarchar" MaxLength="50" />
           <Property Name="DataName" Type="nvarchar" MaxLength="50" />
           <Property Name="Uint" Type="nvarchar" MaxLength="50" />
@@ -29,6 +29,13 @@
           <Property Name="Ratio" Type="float" />
           <Property Name="Offset" Type="float" />
           <Property Name="Address" Type="int" />
+        </EntityType>
+        <EntityType Name="SystemStanderd">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Offset" Type="float" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -60,7 +67,8 @@
         </Association>
         <EntityContainer Name="ReprintModelStoreContainer">
           <EntitySet Name="Alarm" EntityType="Self.Alarm" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DefineChannel" EntityType="Self.DefineChannel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DefineChannal" EntityType="Self.DefineChannal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemStanderd" EntityType="Self.SystemStanderd" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__User__TypeId__37A5467C" Association="Self.FK__User__TypeId__37A5467C">
@@ -90,7 +98,10 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
           <EntitySet Name="Alarm" EntityType="ReprintModel.Alarm" />
-          <EntitySet Name="DefineChannel" EntityType="ReprintModel.DefineChannel" />
+          <EntitySet Name="DefineChannal" EntityType="ReprintModel.DefineChannal" />
+          <EntitySet Name="SystemStanderd" EntityType="ReprintModel.SystemStanderd" />
+      
+         
         </EntityContainer>
         <EntityType Name="UserType">
           <Key>
@@ -123,11 +134,11 @@
           <Property Name="AlarmValue" Type="Int32" />
           <Property Name="StopValue" Type="Int32" />
         </EntityType>
-        <EntityType Name="DefineChannel">
+        <EntityType Name="DefineChannal">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ChannelCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DataName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Uint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -137,6 +148,15 @@
           <Property Name="Offset" Type="Double" />
           <Property Name="Address" Type="Int32" />
         </EntityType>
+        <EntityType Name="SystemStanderd">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Offset" Type="Double" />
+        </EntityType>
+      
+       
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -173,9 +193,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DefineChannel">
-            <EntityTypeMapping TypeName="ReprintModel.DefineChannel">
-              <MappingFragment StoreEntitySet="DefineChannel">
+          <EntitySetMapping Name="DefineChannal">
+            <EntityTypeMapping TypeName="ReprintModel.DefineChannal">
+              <MappingFragment StoreEntitySet="DefineChannal">
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Offset" ColumnName="Offset" />
                 <ScalarProperty Name="Ratio" ColumnName="Ratio" />
@@ -188,6 +208,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="SystemStanderd">
+            <EntityTypeMapping TypeName="ReprintModel.SystemStanderd">
+              <MappingFragment StoreEntitySet="SystemStanderd">
+                <ScalarProperty Name="Offset" ColumnName="Offset" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+         
+          
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
