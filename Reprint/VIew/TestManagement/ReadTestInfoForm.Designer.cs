@@ -122,6 +122,7 @@
             this.btnProductGoto.TabIndex = 35;
             this.btnProductGoto.Text = "跳转";
             this.btnProductGoto.UseVisualStyleBackColor = true;
+            this.btnProductGoto.Click += new System.EventHandler(this.btnProductGoto_Click);
             // 
             // txtProductSetPage
             // 
@@ -218,6 +219,7 @@
             this.btnSearchTest.TabIndex = 55;
             this.btnSearchTest.Text = "搜索";
             this.btnSearchTest.UseVisualStyleBackColor = true;
+            this.btnSearchTest.Click += new System.EventHandler(this.btnSearchTest_Click);
             // 
             // label2
             // 
@@ -299,6 +301,7 @@
             this.btnSelect.TabIndex = 56;
             this.btnSelect.Text = "提取";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // ReadTestInfoForm
             // 

@@ -17,9 +17,7 @@ namespace Reprint
 {
     public partial class DisplayControl : UserControl
     {
-        /// <summary>
         /// 读取数据集合
-        /// </summary>
         private List<List<double>> readDataList = new List<List<double>>();
 
         private List<double> readMotorSpeedShow = new List<double>();
@@ -226,9 +224,9 @@ namespace Reprint
 
         }
 
-        /// <summary>
+           
         /// 实时显示数据线程
-        /// </summary>
+           
         public void ReflashDisplay(TestControl.WorkOutData displayData)
         {
             if (!IsInitilizeChannel)
@@ -242,9 +240,9 @@ namespace Reprint
             DisplayCurve(displayData);
         }
 
-        /// <summary>
+           
         /// 显示状态信息
-        /// </summary>
+           
         private void DisplayState(TestControl.WorkOutData displayData)
         {
             txtComState.Text = displayData.ComState.ToString();
@@ -254,9 +252,9 @@ namespace Reprint
 
         }
 
-        /// <summary>
+           
         /// 显示PLC实时采集数据
-        /// </summary>
+           
         private void DisplayPLCData(TestControl.WorkOutData displayData)
         {
             txtMotorRunSpeed.Text = Math.Round(displayData.MotorSpeed, 0).ToString();
@@ -269,9 +267,9 @@ namespace Reprint
             txtPLCRoomTemp.Text = Math.Round(displayData.RoomTemp, 1).ToString();
         }
 
-        /// <summary>
+           
         /// 显示ART实时采集数据
-        /// </summary>
+           
         private void DisplayARTData(TestControl.WorkOutData displayData)
         {
             for (int i = 0; i < displayData.ARTReadData.Length; i++)
@@ -280,9 +278,9 @@ namespace Reprint
             }
         }
 
-        /// <summary>
+           
         /// 显示ART实时采集数据
-        /// </summary>
+           
         public void DisplayARTDataName(string[] dataName)
         {
             if (dataName != null && dataName.Length == 16)
@@ -302,9 +300,9 @@ namespace Reprint
             zghShow.Refresh();
         }
 
-        /// <summary>
+           
         /// 显示曲线图
-        /// </summary>
+           
         private void DisplayCurve(TestControl.WorkOutData displayData)
         {
             readMotorSpeedShow.Remove(readMotorSpeedShow.Count - 1);
@@ -455,9 +453,9 @@ namespace Reprint
             zghShow.Refresh();
         }
 
-        /// <summary>
+           
         /// 公共操作类
-        /// </summary>
+           
         private CommonBLL commonBll = new CommonBLL();
 
         private void InitilizeChannel()

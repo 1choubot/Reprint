@@ -98,14 +98,15 @@ namespace Reprint.VIew
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 22);
             this.label2.TabIndex = 1;
-            this.label2.Text = "欢迎使用复刻系统";
+            this.label2.Text = "欢迎使用复刻案例";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(701, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 12);
+            this.label1.Size = new System.Drawing.Size(274, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "平衡轴多功能测试台";
             // 
@@ -122,7 +123,7 @@ namespace Reprint.VIew
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Silver;
             this.flowLayoutPanel1.Controls.Add(this.btnTestManager);
             this.flowLayoutPanel1.Controls.Add(this.btnSystemManager);
             this.flowLayoutPanel1.Controls.Add(this.btnSealManager);
@@ -162,6 +163,7 @@ namespace Reprint.VIew
             this.btnSealManager.TabIndex = 0;
             this.btnSealManager.Text = "数据管理";
             this.btnSealManager.UseVisualStyleBackColor = true;
+            this.btnSealManager.Click += new System.EventHandler(this.btnSealManager_Click);
             // 
             // btnExitSystem
             // 

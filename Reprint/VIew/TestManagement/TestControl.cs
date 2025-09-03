@@ -18,28 +18,17 @@ namespace Reprint
 {
     public partial class TestControl : UserControl
     {
-        //说明：存储和显示，面对的是数据模型，只跟试验功能有关，
-        //在启动的时候，初始化定义后，通信读取各自的缓存，解析各自的缓存数据到数据模型即OK
-
-        /// <summary>
         /// 公共操作类
-        /// </summary>
         CommonBLL commonBll = new CommonBLL();
 
-        /// <summary>
         /// 登录用户
-        /// </summary>
         private User userInfo;
 
-        /// <summary>
         /// 说明：存储和显示，面对的是数据模型，只跟试验功能有关，
         /// 在启动的时候，初始化定义后，通信读取各自的缓存，解析各自的缓存数据到数据模型即OK
-        /// </summary>
         private string[] dataModule = new string[27];
 
-        /// <summary>
         /// 实验启动标识
-        /// </summary>
         private bool testIsStart = false;
 
         public MainUserControl mainUserControl;
@@ -87,9 +76,9 @@ namespace Reprint
             InitializeDefineChannel();
         }
 
-        /// <summary>
+                   
         /// 初始化报警数据
-        /// </summary>
+                   
         private void InitializeAlarm()
         {
             realAlarmDatas.Clear();
@@ -115,23 +104,23 @@ namespace Reprint
 
         #region 操作试验
 
-        /// <summary>
+                   
         /// 当前实际操作的试验对象
-        /// </summary>
+                   
         public TestInfo realTestInfo = null;
 
-        /// <summary>
+                   
         /// 当前显示的试验工况
-        /// </summary>
+                   
         private List<WorkStation> displayWorkStations = new List<WorkStation>();
-        /// <summary>
+                   
         /// 当前选择的尚未进入试验流程的试验工况
-        /// </summary>
+                   
         private List<WorkStation> selectWorkStations = new List<WorkStation>();
 
-        /// <summary>
+                   
         /// 新增试验
-        /// </summary>
+                   
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAddTestInfo_Click(object sender, EventArgs e)
@@ -174,9 +163,9 @@ namespace Reprint
             DisplayTestInfo();
         }
 
-        /// <summary>
+                   
         /// 显示试验信息
-        /// </summary>
+                   
         /// <param name="testInfo"></param>
         private void DisplayTestInfo()
         {
@@ -191,35 +180,12 @@ namespace Reprint
             DisplayTestWorkStation();
         }
 
-        /// <summary>
+                   
         /// 显示试验工况
-        /// </summary>
+                   
         /// <param name="testInfo"></param>
         private void DisplayTestWorkStation()
         {
-            //if (realTestInfo == null)
-            //{
-            //    return;
-            //}
-            //displayWorkStations = commonBll.sdEntities.WorkStation.Where(a => a.TestCode == realTestInfo.TestCode).ToList();
-            //dgvStation.Rows.Clear();
-            //if (displayWorkStations.Count > 0)
-            //{
-            //    List<WorkStation> compWorkStations = displayWorkStations.OrderBy(a => a.WorkStationId).ToList();
-
-            //    for (int i = 0; i < compWorkStations.Count; i++)
-            //    {
-            //        dgvStation.Rows.Add(new[]
-            //        {
-
-            //           compWorkStations[i].WorkStationId.ToString(),
-            //           compWorkStations[i].TestType,
-            //           compWorkStations[i].SetRunSpeed.ToString(),
-            //           compWorkStations[i].SetLongTime.ToString(),
-            //           "上移", "下移", "修改", "删除"
-            //        });
-            //    }
-            //}
             dgvStation.Rows.Add(new[]
                     {
                        "1", "高温高速耐久测试", "1500", "1000", "上移", "下移", "修改", "删除"
@@ -239,78 +205,19 @@ namespace Reprint
                     });
         }
 
-        /// <summary>
+                   
         /// 插入试验工况
-        /// </summary>
+                   
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnInsertTest_Click(object sender, EventArgs e)
         {
-            //if (testIsStart)
-            //{
-            //    new MessageBoxForm("试验正在运行，不能操作试验信息", MessageBoxForm.MessageType.Erro).Show();
-            //    return;
-            //}
-            //if (realTestInfo == null)
-            //{
-            //    new MessageBoxForm("请先添加或者选择试验信息", MessageBoxForm.MessageType.Erro).Show();
-            //    return;
-            //}
-            //try
-            //{
-            //    WorkStation workStation = new WorkStation();
-            //    if (midWorkStation != null)      //
-            //    {
-            //        workStation = midWorkStation;
-            //    }
-
-            //    if (midWorkStation == null)
-            //    {
-            //        workStation.TestCode = realTestInfo.TestCode;
-            //        workStation.WorkStationId = displayWorkStations.Count + 1;
-            //    }
-
-            //    workStation.SetRunSpeed = int.Parse(txtSetRunSpeed.Text);
-            //    workStation.SetLongTime = int.Parse(txtSetLongTime.Text);
-            //    workStation.AccrossSpeed = 100;
-            //    //workStation.HighTemp = double.Parse(txtHighTemp.Text);
-            //    //workStation.LowTemp = double.Parse(txtLowTemp.Text);
-            //    //workStation.SetActiveTime = int.Parse(txtActiveTime.Text);
-            //    workStation.TestType = txtTestType.Text;
-
-
-
-            //    if (txtTestType.Text == "饱和试验" && workStation.SetLongTime >= workStation.SetActiveTime)
-            //    {
-            //        new MessageBoxForm("持续时间不能大于有效时间", MessageBoxForm.MessageType.Erro).Show();
-            //        return;
-            //    }
-            //    if (workStation.HighTemp <= workStation.LowTemp)
-            //    {
-            //        new MessageBoxForm("温度下限不能高于温度上限", MessageBoxForm.MessageType.Erro).Show();
-            //        return;
-            //    }
-            //    if (workStation.SetRunSpeed > 8000)
-            //    {
-            //        new MessageBoxForm("速度设定不能超过800rpm", MessageBoxForm.MessageType.Erro).Show();
-            //        return;
-            //    }
-            //    commonBll.sdEntities.WorkStation.AddOrUpdate(workStation);
-            //    commonBll.sdEntities.SaveChanges();
-            //    midWorkStation = null;
             DisplayTestWorkStation();
-            //}
-            //catch (Exception ex)
-            //{
-            //    new MessageBoxForm(ex.Message, MessageBoxForm.MessageType.Erro).Show();
-            //    return;
-            //}
-
         }
 
-        /// <summary>
+                   
         /// 删除试验工况
-        /// </summary>
+                   
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void dgvStation_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -411,9 +318,9 @@ namespace Reprint
         }
 
         private WorkStation midWorkStation = null;
-        /// <summary>
+                   
         /// 提取试验信息
-        /// </summary>
+                   
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnReadTestInfo_Click(object sender, EventArgs e)
@@ -429,17 +336,17 @@ namespace Reprint
             readTestInfoForm.ShowDialog();
         }
 
-        /// <summary>
+                   
         /// 刷新试验信息
-        /// </summary>
+                   
         public void ReflashTestInfo()
         {
             DisplayTestInfo();
         }
 
-        /// <summary>
+                   
         /// 提取用于试验的试验工况
-        /// </summary>
+                   
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void dgvStation_SelectionChanged(object sender, EventArgs e)
@@ -481,111 +388,111 @@ namespace Reprint
         #endregion
 
         #region 运行试验
-        /// <summary>
+                   
         /// 通信读取数据线程
-        /// </summary>
+                   
         private Thread readThread;
-        /// <summary>
+                   
         /// 通信读取数据时钟
-        /// </summary>
+                   
         private int readTimeLen = 1000;
-        /// <summary>
+                   
         /// 存储数据线程
-        /// </summary>
+                   
         private Thread saveThread;
-        /// <summary>
+                   
         /// 显示及存储线程时钟
-        /// </summary>
+                   
         private int saveTimeLen = 1000;
-        /// <summary>
+                   
         /// 数据显示线程
-        /// </summary>
+                   
         private Thread displayThread;
-        /// <summary>
+                   
         /// 换算数据线程时间间隔
-        /// </summary>
+                   
         private int displayTimeLen = 100;
-        /// <summary>
+                   
         /// 数据换算线程
-        /// </summary>
+                   
         private Thread workOutThread;
-        /// <summary>
+                   
         /// 换算数据线程时间间隔
-        /// </summary>
+                   
         private int workOutTimeLen = 1000;
-        /// <summary>
+                   
         /// 实验顺序控制线程
-        /// </summary>
+                   
         private Thread controlThread;
-        /// <summary>
+                   
         /// 实验顺序控制线程时间间隔
-        /// </summary>
+                   
         private int controlTimeLen = 1000;
         bool isStartOk = false;
-        /// <summary>
+                   
         /// 数据模型
-        /// </summary>
+                   
         private WorkOutData displayData = new WorkOutData();
-        /// <summary>
+                   
         /// 系统故障报警
-        /// </summary>
+                   
         private bool SystemIsFault = false;
-        /// <summary>
+                   
         /// 正在进行的实验序号
-        /// </summary>
+                   
         private int runWorkStationId = -1;
-        /// <summary>
+                   
         /// 正在进行的实验工况
-        /// </summary>
+                   
         private WorkStation runWorkStation = new WorkStation();
-        /// <summary>
+                   
         /// 实验持续时间
-        /// </summary>
+                   
         private int testKeepTime = 0;
-        /// <summary>
+                   
         /// 实验有效时间（针对饱和试验类型）
-        /// </summary>
+                   
         private int testActiveTime = 0;
-        /// <summary>
+                   
         /// 自定义通道集合
-        /// </summary>
+                   
         List<DefineChannal> realDefineChannels = new List<DefineChannal>();
 
         #region 200PLC
-        /// <summary>
+                   
         /// PLC200IP地址
-        /// </summary>
+                   
         private string ip200 = "192.168.2.1";
-        /// <summary>
+                   
         /// 定义200PLC的通信对象
-        /// </summary>
+                   
         private SiemensS7Net siemens200TcpNet = new SiemensS7Net(SiemensPLCS.S200Smart);
 
         // Siemens S7 类提供了一系列方法和功能，用于与 Siemens S7 PLC 进行通讯。
 
-        /// <summary>
+                   
         /// 定义200PLC的读数据线程
-        /// </summary>
+                   
         private Thread read200Thread = null;
-        /// <summary>
+                   
         /// 定义200PLC读取数据数组（整型）
-        /// </summary>
+                   
         private OperateResult<short[]> read200Arry = new OperateResult<short[]>();
-        /// <summary>
+                   
         /// 定义数组长度
-        /// </summary>
+                   
         private ushort dataLen = 33;
-        /// <summary>
+                   
         /// 定义转换数组
-        /// </summary>
+                   
         private short[] read200Data;
-        /// <summary>
+                   
         /// 定义200PLC通信状态
-        /// </summary>
+                   
         private OperateResult connect200State = new OperateResult();
-        /// <summary>
+                   
         /// 通信连接200PLC
-        /// </summary>
+                   
         /// <returns></returns>
         private bool connect200()
         {
@@ -611,9 +518,9 @@ namespace Reprint
                 MessageBox.Show(ex.Message);
             }
         }
-        /// <summary>
+                   
         /// 读取200PLC数据
-        /// </summary>
+                   
         private void read200()
         {
             if (connect200State.IsSuccess)
@@ -633,9 +540,9 @@ namespace Reprint
                 connect200();
             }
         }
-        /// <summary>
+                   
         /// 加热器风机控制
-        /// </summary>
+                   
         /// <param name="type"></param>
         private void controlHeartMotor(bool type)
         {
@@ -662,9 +569,9 @@ namespace Reprint
                 }
             }
         }
-        /// <summary>
+                   
         /// 加热器控制
-        /// </summary>
+                   
         /// <param name="type"></param>
         private void controlHearter(bool type)
         {
@@ -691,9 +598,9 @@ namespace Reprint
                 }
             }
         }
-        /// <summary>
+                   
         /// 冷却风机控制
-        /// </summary>
+                   
         /// <param name="type"></param>
         private void controlCoolMotor(bool type)
         {
@@ -720,9 +627,9 @@ namespace Reprint
                 }
             }
         }
-        /// <summary>
+                   
         /// 气幕开关控制
-        /// </summary>
+                   
         /// <param name="type"></param>
         private void controlQiMu(bool type)
         {
@@ -749,9 +656,9 @@ namespace Reprint
                 }
             }
         }
-        /// <summary>
+                   
         /// 阀门控制
-        /// </summary>
+                   
         /// <param name="num">阀门编号</param>
         /// <param name="type">开或者关</param>
         private void controlFaMen(int num, bool type)
@@ -881,9 +788,9 @@ namespace Reprint
             }
 
         }
-        /// <summary>
+                   
         /// 启动加热
-        /// </summary>
+                   
         private void startUpTemp()
         {
             stopDownTemp();
@@ -899,26 +806,26 @@ namespace Reprint
             }
 
         }
-        /// <summary>
+                   
         /// 停止加热
-        /// </summary>
+                   
         private void stopUpTemp()
         {
             controlHeartMotor(false);
             controlHearter(false);
         }
-        /// <summary>
+                   
         /// 启动降温
-        /// </summary>
+                   
         private void startDownTemp()
         {
             stopUpTemp();
             controlCoolMotor(true);
 
         }
-        /// <summary>
+                   
         /// 停止降温
-        /// </summary>
+                   
         private void stopDownTemp()
         {
             controlCoolMotor(false);
@@ -927,29 +834,29 @@ namespace Reprint
         #endregion
 
         #region 1200PLC
-        /// <summary>
+                   
         /// 1200PLC通信类
-        /// </summary>
+                   
         private SiemensS7Net siemens1200TcpNet = new SiemensS7Net(SiemensPLCS.S1200);
-        /// <summary>
+                   
         /// 读1200PLC线程
-        /// </summary>
+                   
         private Thread read1200Thread = null;
-        /// <summary>
+                   
         /// 1200PLC读取数据集
-        /// </summary>
+                   
         private OperateResult<float[]> read1200Arry = new OperateResult<float[]>();
-        /// <summary>
+                   
         /// 1200PLC转换数据集合
-        /// </summary>
+                   
         private float[] read1200Data = new float[12];
-        /// <summary>
+                   
         /// 1200PLC通信状态
-        /// </summary>
+                   
         private OperateResult connect1200State = new OperateResult();
-        /// <summary>
+                   
         /// 连接1200PLC通信
-        /// </summary>
+                   
         /// <returns></returns>
         private bool connect1200()
         {
@@ -975,9 +882,9 @@ namespace Reprint
                 return false;
             }
         }
-        /// <summary>
+                   
         /// 读取1200PLC线程
-        /// </summary>
+                   
         private void read1200()
         {
 
@@ -998,9 +905,9 @@ namespace Reprint
             }
 
         }
-        /// <summary>
+                   
         /// 写入运行速度
-        /// </summary>
+                   
         /// <param name="SetRunSpeed"></param>
         private void setRunSpeed(int SetRunSpeed)
         {
@@ -1016,9 +923,9 @@ namespace Reprint
 
 
         }
-        /// <summary>
+                   
         /// 写入运行加速度
-        /// </summary>
+                   
         /// <param name="SetRunStepSpeed"></param>
         private void setRunStepSpeed(int SetRunStepSpeed)
         {
@@ -1033,9 +940,9 @@ namespace Reprint
             }
 
         }
-        /// <summary>
+                   
         /// 变频器使能
-        /// </summary>
+                   
         private void btnMotorEnble()
         {
             if (connect1200State == null || !connect1200State.IsSuccess)
@@ -1051,9 +958,9 @@ namespace Reprint
 
             }
         }
-        /// <summary>
+                   
         /// 变频器取消使能
-        /// </summary>
+                   
         private void btnMotorDisEnble()
         {
             if (connect1200State == null || !connect1200State.IsSuccess)
@@ -1069,9 +976,9 @@ namespace Reprint
 
             }
         }
-        /// <summary>
+                   
         /// 启动电机运行
-        /// </summary>
+                   
         private void btnMotorStart()
         {
             if (connect1200State == null || !connect1200State.IsSuccess)
@@ -1088,9 +995,9 @@ namespace Reprint
 
             }
         }
-        /// <summary>
+                   
         /// 停止电机运行
-        /// </summary>
+                   
         private void btnMotorStop()
         {
             if (connect1200State == null || !connect1200State.IsSuccess)
@@ -1113,26 +1020,26 @@ namespace Reprint
         //Asynchronous Response Technology(ART)：异步响应技术是一种通信模式，其中通信的一方在接收到请求后可以不立即做出响应，
         //而是在稍后的时间内发送响应。这种技术常见于网络通信和分布式系统中，用于提高系统的吞吐量和响应速度。
 
-        /// <summary>
+                   
         /// ARTIP地址
-        /// </summary>
+                   
         private string ipART = "192.168.2.6";
-        /// <summary>
+                   
         /// ART端口号
-        /// </summary>
+                   
         private int portART = 502;
-        /// <summary>
+                   
         /// 读取ART数据长度
-        /// </summary>
+                   
         private static int readLen = 37;
 
-        /// <summary>
+                   
         /// 缓存空间
-        /// </summary>
+                   
         private int bufferLen = 1024;
-        /// <summary>
+                   
         /// ART读数据指令
-        /// </summary>
+                   
         private string ARTCMD = "01 04 00 00 00 10 F1 C6";
 
         ///16进制
@@ -1144,19 +1051,19 @@ namespace Reprint
         ///F1 C6:CRC校验码                         (2 byte)
         ///校验码会根据前面的数据变化而变化，需要手动计算
 
-        /// <summary>
+                   
         /// ART通信类
-        /// </summary>
+                   
         private SocketCom artCom;
-        /// <summary>
+                   
         /// ART通信数据
-        /// </summary>
+                   
         private byte[] artBytes = new byte[readLen];
 
 
-        /// <summary>
+                   
         /// ART通信连接
-        /// </summary>
+                   
         /// <returns></returns>
         private bool connetArt()
         {
@@ -1192,9 +1099,9 @@ namespace Reprint
             }
 
         }
-        /// <summary>
+                   
         /// 读取ART数据
-        /// </summary>
+                   
         private void readArt()
         {
             if (artCom == null || !artCom.comConnected)
@@ -1314,9 +1221,9 @@ namespace Reprint
             }
             #endregion
         }
-        /// <summary>
+                   
         /// 读取PLC数据
-        /// </summary>
+                   
         private void read()
         {
             while (true)
@@ -1330,9 +1237,9 @@ namespace Reprint
 
         }
 
-        /// <summary>
+                   
         /// 换算数据
-        /// </summary>
+                   
         private void workOutData()
         {
             while (true)
@@ -1391,9 +1298,9 @@ namespace Reprint
 
         }
 
-        /// <summary>
+                   
         /// 显示和存储数据
-        /// </summary>
+                   
         private void saveData()
         {
             while (true)
@@ -1434,9 +1341,9 @@ namespace Reprint
 
         }
 
-        /// <summary>
+                   
         /// 实时显示数据线程
-        /// </summary>
+                   
         public void display()
         {
             while (true)
@@ -1453,9 +1360,9 @@ namespace Reprint
 
         }
 
-        /// <summary>
+                   
         /// 运行温升试验类型
-        /// </summary>
+                   
         private void testMF()
         {
             if (int.Parse(txtLoopLenShow.Text) == 0 && int.Parse(txtLoopLenSet.Text) > 0)
@@ -1549,17 +1456,17 @@ namespace Reprint
                 }
             }
         }
-        /// <summary>
+                   
         /// 开始计算时间标识
-        /// </summary>
+                   
         private bool startCount = false;
-        /// <summary>
+                   
         /// 温升试验的稳态温度
-        /// </summary>
+                   
         private double wtTemp = 0.0;
-        /// <summary>
+                   
         /// 运行饱和试验类型
-        /// </summary>
+                   
         private void testWS()
         {
             if (runWorkStation.SetActiveTime * 60 <= testActiveTime || wtTemp > runWorkStation.HighTemp)//超出有效时间范围及视为不合格，并停止试验
@@ -1652,9 +1559,9 @@ namespace Reprint
             }
         }
 
-        /// <summary>
+                   
         /// 试验控制
-        /// </summary>
+                   
         private void controlTest()
         {
             while (true && isStartOk)
@@ -1697,9 +1604,9 @@ namespace Reprint
         }
         #endregion
 
-        /// <summary>
+                   
         /// 停止运行
-        /// </summary>
+                   
         private void StopRun()
         {
             this.Invoke((EventHandler)(delegate
@@ -1720,9 +1627,9 @@ namespace Reprint
 
         }
 
-        /// <summary>
+                   
         /// 停止关闭线程
-        /// </summary>
+                   
         private void ThreadClose()
         {
             if (workOutThread != null)
@@ -1747,9 +1654,9 @@ namespace Reprint
             }
 
         }
-        /// <summary>
+                   
         /// 状态显示
-        /// </summary>
+                   
         /// <param name="stateStr"></param>
         private void ShowState(string stateStr)
         {
@@ -1757,93 +1664,77 @@ namespace Reprint
         }
         #endregion
 
-        /// <summary>
         /// 报警数据结构体
-        /// </summary>
         public struct AlarmData
         {
             public int AlarmNum;
             public bool AlarmIsOn;
             public string AlarmContent;
         }
-        /// <summary>
         /// 显示数据的结构体
-        /// </summary>
         public struct WorkOutData
         {
-            /// <summary>
             /// 系统通信状态
-            /// </summary>
             public StateStr ComState;
-            /// <summary>
             /// 系统启动状态
-            /// </summary>
             public StateStr StartState;
-            /// <summary>
             /// 系统急停状态
-            /// </summary>
             public StateStr EstopState;
-            /// <summary>
             /// 系统报警状态
-            /// </summary>
             public StateStr AlarmState;
-            /// <summary>
             /// 电机速度设定
-            /// </summary>
             public double MotorSetSpeed;
-            /// <summary>
             /// 电机加速度设定
-            /// </summary>
             public double MotorSetStepSpeed;
-            /// <summary>
+                       
             /// 电机速度
-            /// </summary>
+                       
             public double MotorSpeed;
-            /// <summary>
+                       
             /// 电机温度
-            /// </summary>
+                       
             public double MotorTemp;
-            /// <summary>
+                       
             /// 润滑油温度
-            /// </summary>
+                       
             public double LubeTemp;
-            /// <summary>
+                       
             /// 轴承座温度
-            /// </summary>
+                       
             public double BearTemp;
-            /// <summary>
+                       
             /// 主轴温度
-            /// </summary>
+                       
             public double MainBearTemp;
-            /// <summary>
+                       
             /// 加热器温度
-            /// </summary>
+                       
             public double HeatTemp;
-            /// <summary>
+                       
             /// 加热器报警温度
-            /// </summary>
+                       
             public double HeatAlarmTemp;
-            /// <summary>
+                       
             /// 环境仓温度
-            /// </summary>
+                       
             public double RoomTemp;
-            /// <summary>
+                       
             /// ART读取数据定义名称
-            /// </summary>
+                       
             public string[] ARTReadName;
-            /// <summary>
+                       
             /// ART读取数据
-            /// </summary>
+                       
             public string[] ARTReadData;
-            /// <summary>
+                       
             /// 温升试验的稳态温度
-            /// </summary>
+                       
             public string WTTemp;
 
         }
-        /// <summary>
+                   
         /// 弹出窗体的类型，询问，确认，错误
-        /// </summary>
+                   
         public enum StateStr
         {
             是,

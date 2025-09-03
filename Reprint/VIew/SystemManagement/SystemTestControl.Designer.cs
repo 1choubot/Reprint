@@ -39,8 +39,6 @@
             this.btnPLCHeatMotorOpen = new HslControls.HslButton();
             this.btnDisconnect200 = new System.Windows.Forms.Button();
             this.btnConnect200 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -111,7 +109,6 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.txtState = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
@@ -128,7 +125,6 @@
             this.panel1.Controls.Add(this.btnPLCHeatMotorOpen);
             this.panel1.Controls.Add(this.btnDisconnect200);
             this.panel1.Controls.Add(this.btnConnect200);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label24);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label23);
@@ -266,23 +262,6 @@
             this.btnConnect200.TabIndex = 3;
             this.btnConnect200.Text = "通信打开";
             this.btnConnect200.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(506, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(288, 566);
-            this.panel2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label1";
             // 
             // label24
             // 
@@ -903,8 +882,6 @@
             this.Size = new System.Drawing.Size(1218, 809);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
@@ -916,8 +893,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtMianBearTemp;
         private System.Windows.Forms.TextBox txtPLCRoomTemp;

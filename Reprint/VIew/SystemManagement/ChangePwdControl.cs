@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Reprint
 {
@@ -12,8 +13,17 @@ namespace Reprint
         {
             InitializeComponent();
             _originalUserName = currentUserName;
-            lblUserName.Text = _originalUserName; 
+            lblUserName.Text = _originalUserName;
+
+            CenterContentPanel();
+            this.SizeChanged += (s, args) => CenterContentPanel();
         }
+
+        private void CenterContentPanel()
+        {
+            panel1.Left = (this.Width - panel1.Left) / 2;
+            panel1.Top = (this.Height - panel1.Height) / 2;
+;        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {

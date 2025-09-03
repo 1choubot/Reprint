@@ -88,7 +88,7 @@ namespace Reprint.VIew
             }
         }
 
-        //数据管理按钮事件
+        //系统管理按钮事件
         private void btnSystemManager_Click(object sender, EventArgs e)
         {
             panel3.Controls.Clear();
@@ -97,12 +97,22 @@ namespace Reprint.VIew
             panel3.Controls.Add(systemManagerControl);
         }
 
+        //试验管理按钮事件
         private void btnTestManager_Click(object sender, EventArgs e)
         {
             panel3.Controls.Clear();
             var testControl = new TestControl(  userinfo,this);
             testControl.Dock = DockStyle.Fill;
             panel3.Controls.Add(testControl);
+        }
+
+        //数据管理按钮事件
+        private void btnSealManager_Click(object sender, EventArgs e)
+        {
+            panel3.Controls.Clear();
+            var dataManageControl = new DataManageControl();
+            dataManageControl.Dock = DockStyle.Fill;
+            panel3.Controls.Add(dataManageControl);
         }
     }
 }

@@ -44,7 +44,19 @@ namespace Reprint
 
                 dataGridView1.DataSource = users;
             }
-            
+
+            // 居中内容Panel
+            CenterContentPanel();
+            this.SizeChanged += (s, args) => CenterContentPanel();
+        }
+
+        private void CenterContentPanel()
+        {
+            if (panel1 != null)
+            {
+                panel1.Left = (this.Width - panel1.Width) / 2;
+                panel1.Top = (this.Height - panel1.Height) / 2;
+            }
         }
 
         //添加用户

@@ -10,6 +10,14 @@ namespace Reprint.VIew
         {
             InitializeComponent();
 
+            // 设置窗口最大化
+            this.WindowState = FormWindowState.Maximized;
+            // 禁止用户调整窗口大小
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            // 禁止最大化和最小化按钮
+            this.MaximizeBox = false;
+            this.MinimizeBox = true;
+
             var loginControl = new LoginControl();
             loginControl.Dock = DockStyle.Fill;
             this.Controls.Add(loginControl);

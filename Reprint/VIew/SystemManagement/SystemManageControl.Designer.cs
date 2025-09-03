@@ -87,6 +87,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            // 设置Dock属性
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name = "SystemManageControl";
             this.Size = new System.Drawing.Size(1388, 713);
             this.panel1.ResumeLayout(false);

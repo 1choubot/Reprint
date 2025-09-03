@@ -65,6 +65,7 @@ namespace Reprint
                         ctrl.KeyPress += commonBll.InputInt_KeyPress;
                 }
             }
+
         }
 
         private void ShowState(string stateStr)

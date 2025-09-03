@@ -77,37 +77,70 @@
     <Compile Include="Alarm.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="AlarmSetControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AlarmSetControl.Designer.cs">
-      <DependentUpon>AlarmSetControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChangePwdControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ChangePwdControl.Designer.cs">
-      <DependentUpon>ChangePwdControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataManageControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DataManageControl.Designer.cs">
-      <DependentUpon>DataManageControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="DefineChannal.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DefineChannelControl.cs">
+    <Compile Include="Model1.Context.cs">
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SystemStanderd.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestData.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestDefineVarible.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VIew\SystemManagement\AlarmSetControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DefineChannelControl.Designer.cs">
+    <Compile Include="VIew\SystemManagement\AlarmSetControl.Designer.cs">
+      <DependentUpon>AlarmSetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIew\SystemManagement\ChangePwdControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIew\SystemManagement\ChangePwdControl.Designer.cs">
+      <DependentUpon>ChangePwdControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIew\DataManager\DataManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIew\DataManager\DataManageControl.Designer.cs">
+      <DependentUpon>DataManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIew\SystemManagement\DefineChannelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIew\SystemManagement\DefineChannelControl.Designer.cs">
       <DependentUpon>DefineChannelControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DisplayControl.cs">
+    <Compile Include="VIew\TestManagement\DisplayControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DisplayControl.Designer.cs">
+    <Compile Include="VIew\TestManagement\DisplayControl.Designer.cs">
       <DependentUpon>DisplayControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -122,79 +155,46 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Module\CommonBLL.cs" />
     <Compile Include="Module\PLCCom.cs" />
     <Compile Include="Module\SocketCom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReadTestInfoForm.cs">
+    <Compile Include="VIew\TestManagement\ReadTestInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReadTestInfoForm.Designer.cs">
+    <Compile Include="VIew\TestManagement\ReadTestInfoForm.Designer.cs">
       <DependentUpon>ReadTestInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemManageControl.cs">
+    <Compile Include="VIew\SystemManagement\SystemManageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SystemManageControl.Designer.cs">
+    <Compile Include="VIew\SystemManagement\SystemManageControl.Designer.cs">
       <DependentUpon>SystemManageControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemStandardControl.cs">
+    <Compile Include="VIew\SystemManagement\SystemStandardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SystemStandardControl.Designer.cs">
+    <Compile Include="VIew\SystemManagement\SystemStandardControl.Designer.cs">
       <DependentUpon>SystemStandardControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemStanderd.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SystemTestControl.cs">
+    <Compile Include="VIew\SystemManagement\SystemTestControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SystemTestControl.Designer.cs">
+    <Compile Include="VIew\SystemManagement\SystemTestControl.Designer.cs">
       <DependentUpon>SystemTestControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestControl.cs">
+    <Compile Include="VIew\TestManagement\TestControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TestControl.Designer.cs">
+    <Compile Include="VIew\TestManagement\TestControl.Designer.cs">
       <DependentUpon>TestControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestData.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TestDefineVarible.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TestInfo.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserInfoControl.cs">
+    <Compile Include="VIew\SystemManagement\UserInfoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserInfoControl.Designer.cs">
+    <Compile Include="VIew\SystemManagement\UserInfoControl.Designer.cs">
       <DependentUpon>UserInfoControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserType.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="VIew\LoginControl.cs">
       <SubType>UserControl</SubType>
@@ -217,19 +217,19 @@
     <Compile Include="WorkStation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AlarmSetControl.resx">
+    <EmbeddedResource Include="VIew\SystemManagement\AlarmSetControl.resx">
       <DependentUpon>AlarmSetControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangePwdControl.resx">
+    <EmbeddedResource Include="VIew\SystemManagement\ChangePwdControl.resx">
       <DependentUpon>ChangePwdControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataManageControl.resx">
+    <EmbeddedResource Include="VIew\DataManager\DataManageControl.resx">
       <DependentUpon>DataManageControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DefineChannelControl.resx">
+    <EmbeddedResource Include="VIew\SystemManagement\DefineChannelControl.resx">
       <DependentUpon>DefineChannelControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DisplayControl.resx">
+    <EmbeddedResource Include="VIew\TestManagement\DisplayControl.resx">
       <DependentUpon>DisplayControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -244,22 +244,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReadTestInfoForm.resx">
+    <EmbeddedResource Include="VIew\TestManagement\ReadTestInfoForm.resx">
       <DependentUpon>ReadTestInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemManageControl.resx">
+    <EmbeddedResource Include="VIew\SystemManagement\SystemManageControl.resx">
       <DependentUpon>SystemManageControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemStandardControl.resx">
+    <EmbeddedResource Include="VIew\SystemManagement\SystemStandardControl.resx">
       <DependentUpon>SystemStandardControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemTestControl.resx">
+    <EmbeddedResource Include="VIew\SystemManagement\SystemTestControl.resx">
       <DependentUpon>SystemTestControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestControl.resx">
+    <EmbeddedResource Include="VIew\TestManagement\TestControl.resx">
       <DependentUpon>TestControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInfoControl.resx">
+    <EmbeddedResource Include="VIew\SystemManagement\UserInfoControl.resx">
       <DependentUpon>UserInfoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIew\LoginControl.resx">
@@ -293,8 +293,8 @@
     <Content Include="License-LGPL.txt" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

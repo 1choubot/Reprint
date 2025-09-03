@@ -20,6 +20,37 @@ namespace Reprint
         {
             InitializeComponent();
 
+            // 美化TreeView
+            SyetemMaintenanceTreeView.BackColor = Color.FromArgb(240, 243, 250);
+            SyetemMaintenanceTreeView.ForeColor = Color.FromArgb(45, 62, 80);
+            SyetemMaintenanceTreeView.Font = new Font("微软雅黑", 11, FontStyle.Bold);
+            SyetemMaintenanceTreeView.BorderStyle = BorderStyle.None;
+            SyetemMaintenanceTreeView.ItemHeight = 32;
+            SyetemMaintenanceTreeView.HideSelection = false;
+            SyetemMaintenanceTreeView.FullRowSelect = true;
+
+            // 美化panel2
+            panel2.BackColor = Color.White;
+            panel2.Padding = new Padding(20);
+
+            // 美化主背景
+            this.BackColor = Color.FromArgb(245, 247, 252);
+
+            // 美化按钮（假设有按钮控件）
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    btn.BackColor = Color.LightSkyBlue;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.Font = new Font("微软雅黑", 11, FontStyle.Bold);
+                    btn.ForeColor = Color.White;
+                    btn.Height = 40;
+                    btn.Width = 140;
+                    btn.Margin = new Padding(10, 10, 10, 10);
+                }
+            }
+
             SyetemMaintenanceTreeView.AfterSelect += SystemMaintenanceTreeView_AfterSelect;
             _currentUserName = currentUserName;
             SyetemMaintenanceTreeView.AfterSelect += SystemMaintenanceTreeView_AfterSelect;
