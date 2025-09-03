@@ -142,6 +142,7 @@ namespace Reprint.VIew
             this.btnTestManager.TabIndex = 0;
             this.btnTestManager.Text = "试验管理";
             this.btnTestManager.UseVisualStyleBackColor = true;
+            this.btnTestManager.Click += new System.EventHandler(this.btnTestManager_Click);
             // 
             // btnSystemManager
             // 

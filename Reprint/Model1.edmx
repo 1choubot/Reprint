@@ -99,7 +99,7 @@
           <Property Name="SetActiveTime" Type="int" />
           <Property Name="HighTemp" Type="float" />
           <Property Name="LowTemp" Type="float" />
-          <Property Name="AcrossSpeed" Type="int" />
+          <Property Name="AccrossSpeed" Type="int" />
           <Property Name="HeatTemp" Type="float" />
           <Property Name="CoolTemp" Type="float" />
         </EntityType>
@@ -259,9 +259,9 @@
           <Property Name="SetActiveTime" Type="Int32" />
           <Property Name="HighTemp" Type="Double" />
           <Property Name="LowTemp" Type="Double" />
-          <Property Name="AcrossSpeed" Type="Int32" />
           <Property Name="HeatTemp" Type="Double" />
           <Property Name="CoolTemp" Type="Double" />
+          <Property Name="AccrossSpeed" Type="Int32" />
         </EntityType>
       
        
@@ -363,9 +363,9 @@
           <EntitySetMapping Name="WorkStation">
             <EntityTypeMapping TypeName="ReprintModel.WorkStation">
               <MappingFragment StoreEntitySet="WorkStation">
+                <ScalarProperty Name="AccrossSpeed" ColumnName="AccrossSpeed" />
                 <ScalarProperty Name="CoolTemp" ColumnName="CoolTemp" />
                 <ScalarProperty Name="HeatTemp" ColumnName="HeatTemp" />
-                <ScalarProperty Name="AcrossSpeed" ColumnName="AcrossSpeed" />
                 <ScalarProperty Name="LowTemp" ColumnName="LowTemp" />
                 <ScalarProperty Name="HighTemp" ColumnName="HighTemp" />
                 <ScalarProperty Name="SetActiveTime" ColumnName="SetActiveTime" />

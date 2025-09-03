@@ -23,8 +23,8 @@ namespace Reprint
         public Nullable<int> SetActiveTime { get; set; }
         public Nullable<double> HighTemp { get; set; }
         public Nullable<double> LowTemp { get; set; }
-        public Nullable<int> AcrossSpeed { get; set; }
         public Nullable<double> HeatTemp { get; set; }
         public Nullable<double> CoolTemp { get; set; }
+        public Nullable<int> AccrossSpeed { get; set; }
     }
 }

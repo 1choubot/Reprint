@@ -9,6 +9,7 @@ namespace Reprint.VIew
         private Timer timer;
         private string currentUserName; // 字段：保存当前用户名
         public bool testIsStart = false;//系统状态
+        public User userinfo = new User();
 
         public MainUserControl()
         {
@@ -94,6 +95,14 @@ namespace Reprint.VIew
             var systemManagerControl = new SystemManageControl(currentUserName);
             systemManagerControl.Dock = DockStyle.Fill;
             panel3.Controls.Add(systemManagerControl);
+        }
+
+        private void btnTestManager_Click(object sender, EventArgs e)
+        {
+            panel3.Controls.Clear();
+            var testControl = new TestControl(  userinfo,this);
+            testControl.Dock = DockStyle.Fill;
+            panel3.Controls.Add(testControl);
         }
     }
 }

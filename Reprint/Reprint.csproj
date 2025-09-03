@@ -89,6 +89,12 @@
     <Compile Include="ChangePwdControl.Designer.cs">
       <DependentUpon>ChangePwdControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataManageControl.Designer.cs">
+      <DependentUpon>DataManageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DefineChannal.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -133,8 +139,15 @@
     </Compile>
     <Compile Include="Module\CommonBLL.cs" />
     <Compile Include="Module\PLCCom.cs" />
+    <Compile Include="Module\SocketCom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadTestInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadTestInfoForm.Designer.cs">
+      <DependentUpon>ReadTestInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemManageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -210,6 +223,9 @@
     <EmbeddedResource Include="ChangePwdControl.resx">
       <DependentUpon>ChangePwdControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataManageControl.resx">
+      <DependentUpon>DataManageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DefineChannelControl.resx">
       <DependentUpon>DefineChannelControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +244,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReadTestInfoForm.resx">
+      <DependentUpon>ReadTestInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SystemManageControl.resx">
       <DependentUpon>SystemManageControl.cs</DependentUpon>
     </EmbeddedResource>

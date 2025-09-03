@@ -56,8 +56,10 @@
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.displayControl1 = new Reprint.DisplayControl();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnReflush = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnStartTest = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtLoopLenShow = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,9 +67,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtShowKeepTime = new System.Windows.Forms.TextBox();
             this.testState = new System.Windows.Forms.ListBox();
-            this.btnStartTest = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
-            this.btnReflush = new System.Windows.Forms.Button();
+            this.displayControl1 = new Reprint.DisplayControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStation)).BeginInit();
@@ -364,13 +364,6 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 90;
             // 
-            // displayControl1
-            // 
-            this.displayControl1.Location = new System.Drawing.Point(780, 0);
-            this.displayControl1.Name = "displayControl1";
-            this.displayControl1.Size = new System.Drawing.Size(1089, 591);
-            this.displayControl1.TabIndex = 115;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -388,6 +381,33 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(391, 270);
             this.panel4.TabIndex = 116;
+            // 
+            // btnReflush
+            // 
+            this.btnReflush.Location = new System.Drawing.Point(290, 29);
+            this.btnReflush.Name = "btnReflush";
+            this.btnReflush.Size = new System.Drawing.Size(75, 23);
+            this.btnReflush.TabIndex = 117;
+            this.btnReflush.Text = "刷新";
+            this.btnReflush.UseVisualStyleBackColor = true;
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(165, 29);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 117;
+            this.btnStop.Text = "停止";
+            this.btnStop.UseVisualStyleBackColor = true;
+            // 
+            // btnStartTest
+            // 
+            this.btnStartTest.Location = new System.Drawing.Point(36, 29);
+            this.btnStartTest.Name = "btnStartTest";
+            this.btnStartTest.Size = new System.Drawing.Size(75, 23);
+            this.btnStartTest.TabIndex = 117;
+            this.btnStartTest.Text = "启动";
+            this.btnStartTest.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -466,40 +486,20 @@
             this.testState.Size = new System.Drawing.Size(687, 270);
             this.testState.TabIndex = 117;
             // 
-            // btnStartTest
+            // displayControl1
             // 
-            this.btnStartTest.Location = new System.Drawing.Point(36, 29);
-            this.btnStartTest.Name = "btnStartTest";
-            this.btnStartTest.Size = new System.Drawing.Size(75, 23);
-            this.btnStartTest.TabIndex = 117;
-            this.btnStartTest.Text = "启动";
-            this.btnStartTest.UseVisualStyleBackColor = true;
-            // 
-            // btnStop
-            // 
-            this.btnStop.Location = new System.Drawing.Point(165, 29);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(75, 23);
-            this.btnStop.TabIndex = 117;
-            this.btnStop.Text = "停止";
-            this.btnStop.UseVisualStyleBackColor = true;
-            // 
-            // btnReflush
-            // 
-            this.btnReflush.Location = new System.Drawing.Point(290, 29);
-            this.btnReflush.Name = "btnReflush";
-            this.btnReflush.Size = new System.Drawing.Size(75, 23);
-            this.btnReflush.TabIndex = 117;
-            this.btnReflush.Text = "刷新";
-            this.btnReflush.UseVisualStyleBackColor = true;
+            this.displayControl1.Location = new System.Drawing.Point(780, 0);
+            this.displayControl1.Name = "displayControl1";
+            this.displayControl1.Size = new System.Drawing.Size(1103, 589);
+            this.displayControl1.TabIndex = 118;
             // 
             // TestControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.displayControl1);
             this.Controls.Add(this.testState);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.displayControl1);
             this.Controls.Add(this.dgvStation);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -513,7 +513,13 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
-
+            // 事件绑定，建议放在 InitializeComponent() 方法最后
+            this.btnAddTestInfo.Click += new System.EventHandler(this.btnAddTestInfo_Click);
+            this.btnReadTestInfo.Click += new System.EventHandler(this.btnReadTestInfo_Click);
+            this.btnInsertTest.Click += new System.EventHandler(this.btnInsertTest_Click);
+            this.btnReflush.Click += new System.EventHandler(this.btnReflush_Click);
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.btnStartTest.Click += new System.EventHandler(this.btnStartTest_Click);
         }
 
         #endregion
@@ -546,7 +552,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
         private System.Windows.Forms.DataGridViewButtonColumn Column4;
         private System.Windows.Forms.DataGridViewButtonColumn Column5;
-        private DisplayControl displayControl1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtLoopLenShow;
@@ -558,5 +563,6 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStartTest;
         private System.Windows.Forms.ListBox testState;
+        private DisplayControl displayControl1;
     }
 }
